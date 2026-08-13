@@ -1,0 +1,4 @@
+titulo;descripcion;otros;tamaño
+Atardecer;Foto realizada en el pantano de Garaio una tarde de verano;Presentada al concurso de xccc obteniendo la segunda posición; 60x60
+Paisaje;Foto tomada en el monte fdfsf de Mondragón, A lo lejos se aprecia el monte;Presentada al concurso de xccc obteniendo la segunda posición; 60x60
+Rocio; Fría mañana. Las gotas de rocío se condensan hasta en las hojas más pequeñas; Presentada al concurso de xccc obteniendo la segunda posición; 60x60

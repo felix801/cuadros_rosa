@@ -1,0 +1,6 @@
+titulo;descripcion;tecnica;tamaño
+Anochecer;Cuadro sobre un anochecer. Copia de otro realizado por xxx; Acrilico; 60x60
+Jilguero;Jilguero en la naturaleza; kjkjl dsda;Acrilico;60x60
+Lirio azul; Lirio azul; asda sadasd ;acrilico;60x60
+Nenúfar;Nenúfar;sfsdfs dsfsdff ;acrilico;60x60
+Rosa;Rosa;gdfgd gdfgdfg ;acrilico;60x60
