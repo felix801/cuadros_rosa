@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-i18n="head.title">Rosa Martín | Galería de Arte y Fotografía</title>
+  <title>Rosa Martín | Galería de Arte y Fotografía</title>
   <meta name="description" content="Portafolio artístico de Rosa Martín. Exposición de pintura en acrílico y colecciones de fotografía artística premiadas en concursos.">
   <link rel="icon" type="image/x-icon" href="Jilguero.ico">
   <link rel="shortcut icon" type="image/x-icon" href="Jilguero.ico">
@@ -16,7 +16,7 @@
   <!-- Cabecera móvil premium -->
   <header class="mobile-header">
     <div class="mobile-logo-wrapper">
-      <span class="mobile-logo-text">Rosa Martín</span>
+      <span class="mobile-logo-text" id="mobileArtistName">Rosa Martín</span>
     </div>
     <button class="mobile-nav-toggle" aria-controls="sidebar-navigation" aria-expanded="false" id="mobileNavToggle">
       <span class="sr-only">Menú</span>
@@ -27,8 +27,8 @@
   <!-- Menú Lateral -->
   <aside class="sidebar" id="sidebar-navigation">
     <div class="sidebar-header">
-      <h1 class="artist-name">Rosa Martín</h1>
-      <p class="artist-subtitle" data-i18n="sidebar.subtitle">Arte & Fotografía</p>
+      <h1 class="artist-name" id="sidebarArtistName">Rosa Martín</h1>
+      <p class="artist-subtitle" id="sidebarArtistSubtitle">Arte & Fotografía</p>
       
       <!-- Selector de Idiomas -->
       <div class="lang-switcher">
@@ -65,6 +65,18 @@
             <span data-i18n="nav.cuadros">Cuadros</span>
           </a>
         </li>
+        <li>
+          <a href="#dibujos" class="nav-link" data-section="dibujos">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span data-i18n="nav.dibujos">Dibujos</span>
+          </a>
+        </li>
+        <li id="navItemGestion" style="display: none;">
+          <a href="#gestion" class="nav-link" data-section="gestion" id="navLinkGestion">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span data-i18n="nav.gestion">Gestión</span>
+          </a>
+        </li>
       </ul>
     </nav>
     
@@ -76,8 +88,11 @@
         <a href="#" aria-label="Contacto / Email">
           <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
+        <button type="button" class="admin-lock-btn" id="btnAdminLock" data-i18n-attr="title:auth.lockTooltip" title="Acceso de Administración" aria-label="Acceso de Administración">
+          <svg class="lock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
       </div>
-      <p class="copyright">&copy; 2026 Rosa Martín</p>
+      <p class="copyright" id="footerArtistCopyright">&copy; 2026 Rosa Martín</p>
     </div>
   </aside>
 
@@ -98,6 +113,7 @@
           <div class="hero-actions">
             <a href="#cuadros" class="btn btn-primary" data-i18n="hero.btnPrimary">Ver Óleos y Acrílicos</a>
             <a href="#fotografias" class="btn btn-secondary" data-i18n="hero.btnSecondary">Explorar Galería de Fotos</a>
+            <a href="#dibujos" class="btn btn-secondary" data-i18n="hero.btnDrawings">Ver Dibujos y Bocetos</a>
           </div>
         </div>
       </div>
@@ -105,17 +121,24 @@
       <div class="section-grid">
         <div class="feature-card">
           <div class="card-icon-wrapper">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9.53 16.122l9.37-9.445m-1.121 2.807l1.121-1.123m-.001 0l-1.122-1.12m-9.255 12.3c-.63 0-1.213-.25-1.648-.686A2.317 2.317 0 015.69 17.8c0-.629.25-1.213.686-1.647L16.29 6.273a2.317 2.317 0 013.296 0 2.328 2.328 0 010 3.29l-9.914 9.907c-.435.435-1.018.686-1.647.686z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9.53 16.122l9.37-9.445m-1.121 2.807l1.121-1.123m-.001 0l-1.122-1.12m-9.255 12.3c-.63 0-1.213-.25-1.648-.686A2.317 2.317 0 015.69 17.8c0-.629.25-1.213.686-1.647L16.29 6.273a2.317 2.317 0 013.296 0 2.328 2.328 0 010 3.29l-9.914 9.907c-.435.435-1.018.686-1.647.686z" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 21h18M10.5 7.5l-3 3" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
           <h3 data-i18n="features.paint.title">Pinturas y Cuadros</h3>
           <p data-i18n="features.paint.desc">Creaciones en acrílico que reflejan la pasión por el color, la textura y las formas inspiradas en la naturaleza. Cada obra cuenta una historia íntima plasmada en lienzo.</p>
         </div>
         <div class="feature-card">
           <div class="card-icon-wrapper">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z" stroke-linecap="round" stroke-linejoin="round"/><path d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zM18.75 10.5h.008v.008h-.008V10.5z" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
           <h3 data-i18n="features.photo.title">Fotografía de Concurso</h3>
           <p data-i18n="features.photo.desc">Instantes congelados en el tiempo. Fotografías cuidadosamente seleccionadas y presentadas a certámenes locales y nacionales, buscando siempre la luz perfecta y la emoción oculta.</p>
+        </div>
+        <div class="feature-card">
+          <div class="card-icon-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 data-i18n="features.drawing.title">Dibujos y Bocetos</h3>
+          <p data-i18n="features.drawing.desc">Estudios meticulosos a carboncillo, grafito y tinta. Trazos que exploran la luz, la sombra y la expresividad del gesto a través de la sencillez del papel.</p>
         </div>
       </div>
     </section>
@@ -124,32 +147,33 @@
     <section id="sobre-mi" class="content-section">
       <div class="about-container">
         <div class="about-visual">
-          <div class="about-frame">
-            <div class="about-portrait-placeholder">
-              <span class="portrait-logo">RM</span>
+          <div class="about-frame" id="aboutPortraitFrame">
+            <div class="about-portrait-placeholder" id="aboutPortraitPlaceholder">
+              <span class="portrait-logo" id="aboutPortraitInitials">RM</span>
             </div>
+            <img id="aboutPortraitImg" class="about-portrait-img" alt="Retrato de la artista" style="display: none;">
             <div class="frame-accent"></div>
           </div>
         </div>
         <div class="about-text">
           <span class="section-badge" data-i18n="about.badge">Trayectoria</span>
-          <h2 class="section-title" data-i18n="about.title">Sobre Rosa Martín</h2>
-          <p class="about-p font-lead" data-i18n="about.p1">Mi viaje artístico es una búsqueda constante de la belleza en las pequeñas cosas. Entiendo el arte como una ventana abierta a la contemplación y a la emoción más sincera.</p>
-          <p class="about-p" data-i18n="about.p2">Desde muy joven me sentí atraída tanto por el lenguaje plástico del pincel como por la inmediatez del objetivo fotográfico. En la pintura encuentro un espacio de meditación donde puedo jugar con las texturas del acrílico, creando volúmenes y matices que van desde paisajes oníricos hasta detalladas flores y aves.</p>
-          <p class="about-p" data-i18n="about.p3">Paralelamente, la fotografía me permite conectar con el mundo exterior en tiempo real. Capturar el rocío matinal, el atardecer dorado de un pantano o la inmensidad de las cordilleras es mi manera de documentar y honrar los silencios de la naturaleza.</p>
+          <h2 class="section-title" id="aboutArtistTitle">Sobre Rosa Martín</h2>
+          <p class="about-p font-lead" id="aboutBioLead">Mi viaje artístico es una búsqueda constante de la belleza en las pequeñas cosas. Entiendo el arte como una ventana abierta a la contemplación y a la emoción más sincera.</p>
+          <p class="about-p" id="aboutBio2">Desde muy joven me sentí atraída tanto por el lenguaje plástico del pincel como por la inmediatez del objetivo fotográfico. En la pintura encuentro un espacio de meditación donde puedo jugar con las texturas del acrílico, creando volúmenes y matices que van desde paisajes oníricos hasta detalladas flores y aves.</p>
+          <p class="about-p" id="aboutBio3">Paralelamente, la fotografía me permite conectar con el mundo exterior en tiempo real. Capturar el rocío matinal, el atardecer dorado de un pantano o la inmensidad de las cordilleras es mi manera de documentar y honrar los silencios de la naturaleza.</p>
           
           <div class="about-details-grid">
             <div class="detail-item">
               <span class="detail-label" data-i18n="about.detail1.label">Técnica predilecta</span>
-              <span class="detail-val" data-i18n="about.detail1.val">Acrílico sobre lienzo</span>
+              <span class="detail-val" id="aboutDetailTechnique">Acrílico sobre lienzo</span>
             </div>
             <div class="detail-item">
               <span class="detail-label" data-i18n="about.detail2.label">Enfoque fotográfico</span>
-              <span class="detail-val" data-i18n="about.detail2.val">Naturaleza, luz natural y macro</span>
+              <span class="detail-val" id="aboutDetailFocus">Naturaleza, luz natural y macro</span>
             </div>
             <div class="detail-item">
               <span class="detail-label" data-i18n="about.detail3.label">Ubicación</span>
-              <span class="detail-val" data-i18n="about.detail3.val">País Vasco, España</span>
+              <span class="detail-val" id="aboutDetailLocation">País Vasco, España</span>
             </div>
           </div>
         </div>
@@ -179,6 +203,328 @@
 
       <div class="gallery-grid" id="paintingsGallery">
         <!-- Rellenado dinámicamente con JS -->
+      </div>
+    </section>
+
+    <!-- Sección Dibujos -->
+    <section id="dibujos" class="content-section">
+      <div class="section-header">
+        <span class="section-badge" data-i18n="drawings.badge">Carboncillo, Grafito & Tinta</span>
+        <h2 class="section-title" data-i18n="drawings.title">Dibujos y Bocetos</h2>
+        <p class="section-subtitle" data-i18n="drawings.subtitle">Exploración de la forma, el claroscuro y la pureza del trazo en papel.</p>
+      </div>
+
+      <div class="gallery-grid" id="drawingsGallery">
+        <!-- Rellenado dinámicamente con JS -->
+      </div>
+    </section>
+
+    <!-- Sección Gestión -->
+    <section id="gestion" class="content-section">
+      <div class="section-header gestion-header">
+        <div class="header-text-group">
+          <span class="section-badge" data-i18n="gestion.badge">Administración</span>
+          <h2 class="section-title" data-i18n="gestion.title">Gestión del Portafolio</h2>
+          <p class="section-subtitle" data-i18n="gestion.subtitle">Administra tanto el catálogo de obras artísticas como tus datos personales y biografía.</p>
+        </div>
+        <div class="header-actions">
+          <button type="button" class="btn btn-logout" id="btnAdminLogout">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="logout-icon"><path d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span data-i18n="auth.btnLogout">Cerrar Sesión</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Selector de Módulos (Pestañas Secundarias) -->
+      <div class="gestion-tabs-nav" role="tablist" aria-label="Módulos de administración">
+        <button type="button" class="gestion-tab-btn active" role="tab" id="tabBtnArtworks" aria-selected="true" aria-controls="gestionObrasPanel" data-tab="obras">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="tab-icon"><path d="M9.53 16.122l9.37-9.445m-1.121 2.807l1.121-1.123m-.001 0l-1.122-1.12m-9.255 12.3c-.63 0-1.213-.25-1.648-.686A2.317 2.317 0 015.69 17.8c0-.629.25-1.213.686-1.647L16.29 6.273a2.317 2.317 0 013.296 0 2.328 2.328 0 010 3.29l-9.914 9.907c-.435.435-1.018.686-1.647.686z" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 21h18M10.5 7.5l-3 3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span data-i18n="gestion.tabs.artworks">Gestión de Obras</span>
+        </button>
+        <button type="button" class="gestion-tab-btn" role="tab" id="tabBtnProfile" aria-selected="false" aria-controls="gestionPerfilPanel" data-tab="perfil">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="tab-icon"><path d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span data-i18n="gestion.tabs.profile">Datos Personales / Perfil</span>
+        </button>
+      </div>
+
+      <!-- Panel 1: Gestión de Obras -->
+      <div id="gestionObrasPanel" class="gestion-tab-panel active" role="tabpanel" aria-labelledby="tabBtnArtworks">
+        <div class="management-grid">
+        <!-- Formulario de Creación / Edición -->
+        <div class="management-card form-card" id="formCard">
+          <div class="form-header-row">
+            <h3 class="card-heading" id="formMainTitle" data-i18n="gestion.formTitle">Añadir Nueva Obra</h3>
+            <span class="form-mode-badge create-mode" id="formModeBadge" data-i18n="gestion.modeCreate">Añadiendo nueva obra</span>
+          </div>
+          
+          <form id="artworkForm" class="artwork-form" novalidate>
+            <!-- Campos ocultos para modo edición -->
+            <input type="hidden" id="itemId" value="">
+            <input type="hidden" id="itemOriginalType" value="">
+
+            <!-- Selector de Tipo (Pills / Radios) -->
+            <div class="form-group full-width">
+              <label class="form-label" data-i18n="gestion.typeLabel">Tipo de Obra</label>
+              <div class="type-selector" role="radiogroup">
+                <label class="type-option">
+                  <input type="radio" name="artworkType" value="paint" checked id="typePaint">
+                  <span class="type-pill">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="type-icon"><path d="M9.53 16.122l9.37-9.445m-1.121 2.807l1.121-1.123m-.001 0l-1.122-1.12m-9.255 12.3c-.63 0-1.213-.25-1.648-.686A2.317 2.317 0 015.69 17.8c0-.629.25-1.213.686-1.647L16.29 6.273a2.317 2.317 0 013.296 0 2.328 2.328 0 010 3.29l-9.914 9.907c-.435.435-1.018.686-1.647.686z" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 21h18M10.5 7.5l-3 3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <span data-i18n="gestion.typePaint">Cuadro / Pintura</span>
+                  </span>
+                </label>
+                <label class="type-option">
+                  <input type="radio" name="artworkType" value="drawing" id="typeDrawing">
+                  <span class="type-pill">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="type-icon"><path d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <span data-i18n="gestion.typeDrawing">Dibujo</span>
+                  </span>
+                </label>
+                <label class="type-option">
+                  <input type="radio" name="artworkType" value="photo" id="typePhoto">
+                  <span class="type-pill">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="type-icon"><path d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z" stroke-linecap="round" stroke-linejoin="round"/><path d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zM18.75 10.5h.008v.008h-.008V10.5z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <span data-i18n="gestion.typePhoto">Fotografía</span>
+                  </span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Título -->
+            <div class="form-group">
+              <label for="artworkTitle" class="form-label" data-i18n="gestion.inputTitle">Título de la obra *</label>
+              <input type="text" id="artworkTitle" class="form-input" required placeholder="Ej: Amanecer en la montaña">
+            </div>
+
+            <!-- Medidas / Tamaño -->
+            <div class="form-group">
+              <label for="artworkSize" class="form-label" data-i18n="gestion.inputSize">Medidas / Formato *</label>
+              <input type="text" id="artworkSize" class="form-input" required placeholder="Ej: 60x60 cm">
+            </div>
+
+            <!-- Campo dinámico: Técnica (Cuadros y Dibujos) -->
+            <div class="form-group" id="techniqueFieldGroup">
+              <label for="artworkTechnique" class="form-label" data-i18n="gestion.inputTechnique">Técnica *</label>
+              <input type="text" id="artworkTechnique" class="form-input" placeholder="Ej: Acrílico sobre lienzo o Carboncillo sobre papel">
+            </div>
+
+            <!-- Campo dinámico: Concurso / Otros (Fotografías) -->
+            <div class="form-group" id="contestFieldGroup" style="display: none;">
+              <label for="artworkOther" class="form-label" data-i18n="gestion.inputOther">Concurso / Notas *</label>
+              <input type="text" id="artworkOther" class="form-input" placeholder="Ej: Presentada al certamen local, 2º premio">
+            </div>
+
+            <!-- Descripción con Asistente IA -->
+            <div class="form-group full-width">
+              <div class="label-with-action">
+                <label for="artworkDescription" class="form-label" data-i18n="gestion.inputDesc">Descripción de la obra *</label>
+                <div class="ai-button-wrapper">
+                  <button type="button" class="btn-ai-generate" id="btnGenerateAiDesc">
+                    <span class="ai-sparkle">✨</span>
+                    <span id="aiBtnText" data-i18n="gestion.btnAiDesc">Redactar descripción con DeepSeek</span>
+                  </button>
+                  <button type="button" class="btn-ai-key-config" id="btnConfigApiKey" data-i18n-attr="title:gestion.apiKeyTooltip" title="Configurar API Key de DeepSeek" aria-label="Configurar API Key">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="width: 15px; height: 15px;"><path d="M15.75 5.25a3 3 0 013 3m3 0a6 6 0 01-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1121.75 8.25z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </button>
+                </div>
+              </div>
+              
+              <!-- Panel de configuración de DeepSeek API -->
+              <div class="api-key-panel" id="apiKeyPanel" style="display: none;">
+                <div class="api-key-header">
+                  <span class="api-key-title" data-i18n="gestion.apiKeyTitle">Configuración de DeepSeek API</span>
+                  <button type="button" class="api-key-close" id="btnCloseApiKeyPanel">&times;</button>
+                </div>
+                <p class="api-key-help" data-i18n="gestion.apiKeyHelp">Introduce tu clave de DeepSeek para redactar descripciones automáticas. Se guardará localmente en tu navegador.</p>
+                <div class="api-key-fields">
+                  <div class="api-key-field">
+                    <label for="deepseekApiKeyInput" class="api-key-label" data-i18n="gestion.apiKeyLabel">API Key (sk-...):</label>
+                    <input type="password" id="deepseekApiKeyInput" class="form-input api-key-input" placeholder="sk-..." autocomplete="off">
+                  </div>
+                  <div class="api-key-field">
+                    <label for="deepseekApiEndpointInput" class="api-key-label" data-i18n="gestion.apiEndpointLabel">Endpoint / Proxy (opcional):</label>
+                    <input type="text" id="deepseekApiEndpointInput" class="form-input api-key-input" placeholder="https://api.deepseek.com/chat/completions" autocomplete="off">
+                  </div>
+                  <div class="api-key-actions">
+                    <button type="button" class="btn btn-primary btn-sm" id="btnSaveApiKey" data-i18n="gestion.btnSaveKey">Guardar</button>
+                  </div>
+                </div>
+              </div>
+
+              <textarea id="artworkDescription" class="form-textarea" rows="4" required placeholder="Detalla la inspiración, composición o detalles de la pieza..."></textarea>
+            </div>
+
+            <!-- Subida de Imagen y Preview -->
+            <div class="form-group full-width">
+              <label class="form-label" data-i18n="gestion.imageLabel">Fotografía o Imagen de la Obra *</label>
+              <div class="file-dropzone" id="fileDropzone">
+                <input type="file" id="artworkImage" class="file-input" accept="image/*">
+                <div class="dropzone-content" id="dropzonePrompt">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="upload-icon"><path d="M12 16.5V9.75m0 0l3 3m-3-3l-3 3M6.75 19.5a4.5 4.5 0 01-1.41-8.775 5.25 5.25 0 0110.233-2.33 3 3 0 013.758 3.848A3.752 3.752 0 0118 19.5H6.75z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <p class="dropzone-title" data-i18n="gestion.dropzoneTitle">Haz clic o arrastra una imagen aquí</p>
+                  <span class="dropzone-hint" data-i18n="gestion.dropzoneHint">PNG, JPG, WEBP recomendados</span>
+                </div>
+                <div class="image-preview-container" id="imagePreviewContainer" style="display: none;">
+                  <img id="imagePreview" src="" alt="Previsualización de la obra">
+                  <button type="button" class="btn-remove-image" id="btnRemoveImage" data-i18n-attr="aria-label:gestion.removeImage" aria-label="Eliminar imagen seleccionada">&times;</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Feedback Message -->
+            <div id="formFeedback" class="form-feedback" aria-live="polite"></div>
+
+            <!-- Botones de Acción -->
+            <div class="form-actions full-width">
+              <button type="submit" class="btn btn-primary" id="btnSubmitArtwork">
+                <span id="btnSubmitText" data-i18n="gestion.btnSave">Guardar Obra</span>
+              </button>
+              <button type="button" class="btn btn-secondary" id="btnCancelEdit" style="display: none;">
+                <span data-i18n="gestion.btnCancel">Cancelar edición</span>
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Lista de Mantenimiento de Obras -->
+        <div class="management-card list-card">
+          <div class="list-header">
+            <h3 class="card-heading" data-i18n="gestion.listTitle">Obras en el Catálogo</h3>
+            <span class="catalog-counter" id="catalogCounter">0 obras</span>
+          </div>
+
+          <!-- Selector de Subpestañas por Disciplina -->
+          <div class="catalog-filter-tabs" role="toolbar" aria-label="Filtrar catálogo por disciplina">
+            <button type="button" class="catalog-filter-btn active" data-filter="all">
+              <span data-i18n="gestion.filterAll">Todos</span>
+              <span class="filter-count" id="countFilterAll">(0)</span>
+            </button>
+            <button type="button" class="catalog-filter-btn" data-filter="photo">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="filter-icon"><path d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z" stroke-linecap="round" stroke-linejoin="round"/><path d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zM18.75 10.5h.008v.008h-.008V10.5z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span data-i18n="gestion.filterPhotos">Fotografías</span>
+              <span class="filter-count" id="countFilterPhotos">(0)</span>
+            </button>
+            <button type="button" class="catalog-filter-btn" data-filter="paint">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="filter-icon"><path d="M9.53 16.122l9.37-9.445m-1.121 2.807l1.121-1.123m-.001 0l-1.122-1.12m-9.255 12.3c-.63 0-1.213-.25-1.648-.686A2.317 2.317 0 015.69 17.8c0-.629.25-1.213.686-1.647L16.29 6.273a2.317 2.317 0 013.296 0 2.328 2.328 0 010 3.29l-9.914 9.907c-.435.435-1.018.686-1.647.686z" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 21h18M10.5 7.5l-3 3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span data-i18n="gestion.filterPaintings">Cuadros</span>
+              <span class="filter-count" id="countFilterPaintings">(0)</span>
+            </button>
+            <button type="button" class="catalog-filter-btn" data-filter="drawing">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="filter-icon"><path d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span data-i18n="gestion.filterDrawings">Dibujos</span>
+              <span class="filter-count" id="countFilterDrawings">(0)</span>
+            </button>
+          </div>
+          
+          <div class="table-responsive">
+            <table class="management-table" id="managementTable">
+              <thead>
+                <tr>
+                  <th data-i18n="gestion.thImage">Imagen</th>
+                  <th data-i18n="gestion.thTitle">Título</th>
+                  <th data-i18n="gestion.thType">Tipo</th>
+                  <th data-i18n="gestion.thDetail">Técnica / Detalle</th>
+                  <th data-i18n="gestion.thSize">Medidas</th>
+                  <th data-i18n="gestion.thActions">Acción</th>
+                </tr>
+              </thead>
+              <tbody id="managementTableBody">
+                <!-- Inyectado dinámicamente -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Fin Panel 1: Gestión de Obras -->
+
+      <!-- Panel 2: Gestión de Datos Personales / Perfil -->
+      <div id="gestionPerfilPanel" class="gestion-tab-panel" role="tabpanel" aria-labelledby="tabBtnProfile" style="display: none;">
+        <div class="management-card form-card profile-card" id="profileFormCard">
+          <div class="form-header-row">
+            <h3 class="card-heading" data-i18n="gestion.profile.title">Datos Personales y Biografía</h3>
+            <span class="form-mode-badge create-mode" data-i18n="gestion.profile.badge">Perfil de la Artista</span>
+          </div>
+
+          <form id="profileForm" class="artwork-form profile-form" novalidate>
+            <!-- Nombre de la Artista -->
+            <div class="form-group">
+              <label for="profileNameInput" class="form-label" data-i18n="gestion.profile.nameLabel">Nombre del artista *</label>
+              <input type="text" id="profileNameInput" class="form-input" required placeholder="Ej: Rosa Martín">
+            </div>
+
+            <!-- Subtítulo Profesional -->
+            <div class="form-group">
+              <label for="profileSubtitleInput" class="form-label" data-i18n="gestion.profile.subtitleLabel">Subtítulo / Oficio *</label>
+              <input type="text" id="profileSubtitleInput" class="form-input" required placeholder="Ej: Arte & Fotografía">
+            </div>
+
+            <!-- Fotografía de Perfil / Retrato -->
+            <div class="form-group full-width">
+              <label class="form-label" data-i18n="gestion.profile.photoLabel">Fotografía de perfil / Retrato</label>
+              <p class="form-hint" data-i18n="gestion.profile.photoHint">Sustituye el monograma de la sección "Sobre mí" por tu fotografía real.</p>
+              <div class="file-dropzone profile-photo-dropzone" id="profilePhotoDropzone">
+                <input type="file" id="profilePhotoInput" class="file-input" accept="image/*">
+                <div class="dropzone-content" id="profileDropzonePrompt">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="upload-icon"><path d="M12 16.5V9.75m0 0l3 3m-3-3l-3 3M6.75 19.5a4.5 4.5 0 01-1.41-8.775 5.25 5.25 0 0110.233-2.33 3 3 0 013.758 3.848A3.752 3.752 0 0118 19.5H6.75z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <p class="dropzone-title" data-i18n="gestion.profile.dropzoneTitle">Haz clic o arrastra un retrato aquí</p>
+                  <span class="dropzone-hint" data-i18n="gestion.profile.dropzoneHint">PNG, JPG, WEBP recomendados (orientación vertical)</span>
+                </div>
+                <div class="image-preview-container" id="profilePhotoPreviewContainer" style="display: none;">
+                  <img id="profilePhotoPreview" src="" alt="Previsualización de foto de perfil">
+                  <button type="button" class="btn-remove-image" id="btnRemoveProfilePhoto" data-i18n-attr="aria-label:gestion.removeImage" aria-label="Eliminar retrato">&times;</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Párrafo 1 (Lead) -->
+            <div class="form-group full-width">
+              <label for="profileBioLeadInput" class="form-label" data-i18n="gestion.profile.bioLeadLabel">Biografía: Párrafo destacado (Lead) *</label>
+              <textarea id="profileBioLeadInput" class="form-textarea" rows="3" required placeholder="Primer párrafo introductorio de tu trayectoria artística..."></textarea>
+            </div>
+
+            <!-- Párrafo 2 -->
+            <div class="form-group full-width">
+              <label for="profileBio2Input" class="form-label" data-i18n="gestion.profile.bio2Label">Biografía: Segundo párrafo (Pintura / Técnica) *</label>
+              <textarea id="profileBio2Input" class="form-textarea" rows="3" required placeholder="Tu experiencia y relación con la pintura y los cuadros..."></textarea>
+            </div>
+
+            <!-- Párrafo 3 -->
+            <div class="form-group full-width">
+              <label for="profileBio3Input" class="form-label" data-i18n="gestion.profile.bio3Label">Biografía: Tercer párrafo (Fotografía / Inspiración) *</label>
+              <textarea id="profileBio3Input" class="form-textarea" rows="3" required placeholder="Tu mirada fotográfica y conexión con el entorno..."></textarea>
+            </div>
+
+            <!-- Detalles Técnicos -->
+            <div class="form-group">
+              <label for="profileTechniqueInput" class="form-label" data-i18n="gestion.profile.techniqueLabel">Técnica predilecta *</label>
+              <input type="text" id="profileTechniqueInput" class="form-input" required placeholder="Ej: Acrílico sobre lienzo">
+            </div>
+
+            <div class="form-group">
+              <label for="profileFocusInput" class="form-label" data-i18n="gestion.profile.focusLabel">Enfoque fotográfico *</label>
+              <input type="text" id="profileFocusInput" class="form-input" required placeholder="Ej: Naturaleza, luz natural y macro">
+            </div>
+
+            <div class="form-group full-width">
+              <label for="profileLocationInput" class="form-label" data-i18n="gestion.profile.locationLabel">Ubicación *</label>
+              <input type="text" id="profileLocationInput" class="form-input" required placeholder="Ej: País Vasco, España">
+            </div>
+
+            <!-- Feedback Message -->
+            <div id="profileFormFeedback" class="form-feedback" aria-live="polite"></div>
+
+            <!-- Botones de Acción -->
+            <div class="form-actions full-width">
+              <button type="submit" class="btn btn-primary" id="btnSaveProfile">
+                <span data-i18n="gestion.profile.btnSave">Guardar Datos Personales</span>
+              </button>
+              <button type="button" class="btn btn-secondary" id="btnResetProfile">
+                <span data-i18n="gestion.profile.btnReset">Restablecer valores por defecto</span>
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </section>
   </main>
@@ -219,6 +565,48 @@
     <button class="lightbox-next" id="lightboxNext" data-i18n-attr="aria-label:lightbox.next" aria-label="Siguiente imagen">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8.25 4.5l7.5 7.5-7.5 7.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </button>
+  </div>
+ 
+  <!-- Modal de Autenticación de Administrador -->
+  <div class="auth-modal-overlay" id="authModal" role="dialog" aria-modal="true" aria-hidden="true" style="display: none;">
+    <div class="auth-modal-card">
+      <button type="button" class="auth-modal-close" id="btnCloseAuthModal" data-i18n-attr="aria-label:auth.close" aria-label="Cerrar">&times;</button>
+      
+      <div class="auth-modal-header">
+        <div class="auth-lock-shield">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="shield-lock-icon"><path d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="auth-modal-title" data-i18n="auth.modalTitle">Acceso de Administración</h3>
+        <p class="auth-modal-subtitle" data-i18n="auth.modalSubtitle">Introduce la contraseña de seguridad para gestionar el catálogo y tu perfil.</p>
+      </div>
+
+      <form id="adminLoginForm" class="auth-form" novalidate>
+        <div class="form-group">
+          <label for="adminPasswordInput" class="form-label" data-i18n="auth.passwordLabel">Contraseña</label>
+          <div class="password-input-wrapper">
+            <input type="password" id="adminPasswordInput" class="form-input" required autocomplete="current-password" placeholder="Introduce la contraseña" data-i18n-attr="placeholder:auth.passwordPlaceholder">
+            <button type="button" class="btn-toggle-password" id="btnTogglePassword" data-i18n-attr="aria-label:auth.togglePassword" aria-label="Mostrar / Ocultar contraseña">
+              <svg class="eye-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div id="authErrorMsg" class="auth-error-msg" style="display: none;"></div>
+
+        <div class="auth-actions">
+          <button type="button" class="btn btn-secondary" id="btnCancelAuth">
+            <span data-i18n="auth.btnCancel">Cancelar</span>
+          </button>
+          <button type="submit" class="btn btn-primary" id="btnLoginSubmit">
+            <span data-i18n="auth.btnLogin">Entrar</span>
+          </button>
+        </div>
+      </form>
+
+      <div class="auth-shortcut-hint">
+        <span data-i18n="auth.shortcutHint">Atajo de teclado: Ctrl + Shift + A</span>
+      </div>
+    </div>
   </div>
 
   <script src="app.js"></script>
