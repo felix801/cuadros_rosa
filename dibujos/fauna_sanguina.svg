@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+  <defs>
+    <radialGradient id="sanguineBg" cx="50%" cy="50%" r="75%">
+      <stop offset="0%" stop-color="#2d1e1a"/>
+      <stop offset="60%" stop-color="#1f1412"/>
+      <stop offset="100%" stop-color="#120c0a"/>
+    </radialGradient>
+    <filter id="sanguineTexture">
+      <feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="3" result="noise"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.9 0 0 0 0 0.45 0 0 0 0 0.35 0 0 0 0.08 0" in="noise" result="tintNoise"/>
+      <feBlend mode="screen" in="SourceGraphic" in2="tintNoise"/>
+    </filter>
+  </defs>
+
+  <rect width="800" height="800" fill="url(#sanguineBg)"/>
+
+  <!-- Estudio de fauna ibérica: Mirada de ciervo / zorro a sanguina y tinta sepia -->
+  <g filter="url(#sanguineTexture)" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Cabeza y orejas expresivas -->
+    <!-- Oreja izquierda -->
+    <path d="M 330 380 Q 250 260 220 160 Q 280 180 370 280" fill="#321b16" stroke="#e67e60" stroke-width="2.8" opacity="0.9"/>
+    <path d="M 280 230 Q 320 280 340 330" fill="none" stroke="#f0a58e" stroke-width="1.5" opacity="0.75"/>
+
+    <!-- Oreja derecha -->
+    <path d="M 470 380 Q 550 260 580 160 Q 520 180 430 280" fill="#361d18" stroke="#e67e60" stroke-width="2.8" opacity="0.9"/>
+    <path d="M 520 230 Q 480 280 460 330" fill="none" stroke="#f0a58e" stroke-width="1.5" opacity="0.75"/>
+
+    <!-- Estructura craneal / Frente -->
+    <path d="M 340 310 Q 400 290 460 310 Q 490 380 470 450 Q 400 480 330 450 Z" fill="#241411" stroke="#f28e72" stroke-width="2.4" opacity="0.85"/>
+
+    <!-- Ojos penetrantes a tinta oscura y reflejo sanguina -->
+    <!-- Ojo izquierdo -->
+    <ellipse cx="350" cy="400" rx="22" ry="15" transform="rotate(-15 350 400)" fill="#110907" stroke="#ffa38c" stroke-width="2"/>
+    <ellipse cx="347" cy="397" rx="6" ry="6" fill="#ffffff" opacity="0.95"/>
+    <path d="M 320 390 Q 350 375 380 395" fill="none" stroke="#e67e60" stroke-width="2.5"/>
+
+    <!-- Ojo derecho -->
+    <ellipse cx="450" cy="400" rx="22" ry="15" transform="rotate(15 450 400)" fill="#110907" stroke="#ffa38c" stroke-width="2"/>
+    <ellipse cx="447" cy="397" rx="6" ry="6" fill="#ffffff" opacity="0.95"/>
+    <path d="M 420 395 Q 450 375 480 390" fill="none" stroke="#e67e60" stroke-width="2.5"/>
+
+    <!-- Hocico y puente nasal a trazos de tinta sanguina -->
+    <path d="M 380 420 L 375 510 Q 400 540 425 510 L 420 420" fill="#281613" stroke="#f28e72" stroke-width="2.2" opacity="0.9"/>
+    <!-- Nariz -->
+    <path d="M 370 510 Q 400 535 430 510 Q 415 540 400 545 Q 385 540 370 510 Z" fill="#130806" stroke="#ffa894" stroke-width="2"/>
+    
+    <!-- Bigotes dinámicos -->
+    <g stroke="#ffd8ce" stroke-width="1.2" opacity="0.8">
+      <path d="M 360 525 Q 280 530 200 560"/>
+      <path d="M 360 535 Q 290 560 210 610"/>
+      <path d="M 365 545 Q 300 580 230 650"/>
+
+      <path d="M 440 525 Q 520 530 600 560"/>
+      <path d="M 440 535 Q 510 560 590 610"/>
+      <path d="M 435 545 Q 500 580 570 650"/>
+    </g>
+
+    <!-- Sombreado a sanguina con textura de pelo -->
+    <g stroke="#d96b4e" stroke-width="0.9" opacity="0.75">
+      <line x1="375" y1="440" x2="365" y2="470"/>
+      <line x1="385" y1="445" x2="375" y2="475"/>
+      <line x1="395" y1="445" x2="385" y2="480"/>
+      <line x1="405" y1="445" x2="415" y2="480"/>
+      <line x1="415" y1="445" x2="425" y2="475"/>
+      <line x1="425" y1="440" x2="435" y2="470"/>
+      <!-- Sombreado bajo garganta -->
+      <line x1="350" y1="560" x2="450" y2="560"/>
+      <line x1="330" y1="580" x2="470" y2="580"/>
+      <line x1="320" y1="600" x2="480" y2="600"/>
+      <line x1="310" y1="620" x2="490" y2="620"/>
+    </g>
+  </g>
+
+  <!-- Firma -->
+  <text x="680" y="750" font-family="'Cinzel', serif" font-size="14" fill="#d4af37" letter-spacing="3" opacity="0.75">ROSA MARTÍN</text>
+  <text x="680" y="768" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" fill="#e08250" letter-spacing="1.5" opacity="0.6">TINTA Y SANGUINA</text>
+</svg>
